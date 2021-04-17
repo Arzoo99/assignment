@@ -1,0 +1,41 @@
+<html>
+
+<head>
+  <title>JS example</title>
+
+  <script>
+    function alter(arg_1){
+      document.getElementById("img_main").setAttribute("src", "photo_" + arg_1 + ".jfif");
+    }
+
+    function increase_main_image_width(){
+      prev =  document.getElementById("img_main").getAttribute("width");
+      prev = parseInt(prev) + w.value;
+	  
+      document.getElementById("img_main").setAttribute("width", prev);
+    }
+	 function increase_main_image_height(){
+      prev =  document.getElementById("img_main").getAttribute("height");
+      prev = parseInt(prev) + h.value;
+	  
+      document.getElementById("img_main").setAttribute("height", prev);
+    }
+	
+  </script>
+</head>
+
+<body>
+  <img src="photo_1.jfif" id="img_main" height="400px" width="400px" alt="Select an image below to load">
+  <br>
+  <br>
+  <img src="photo_1_thum.jfif" onclick="alter(1)" height="100px" width="100px">
+  <img src="photo_2_thum.jfif" onclick="alter(2)" height="100px" width="100px">
+
+
+  <input type="submit" onclick="increase_main_image_width();
+  increase_main_image_height()" value="set">
+  Width:<input type="text" id="w">
+  Height: <input type="text" id="h">
+</body>
+
+</html>
