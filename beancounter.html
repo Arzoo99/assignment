@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html >
+
+<head><script>var shot, size, price,taxrate=0.087,ounce,typ;</script>
+</head>
+<body>
+<h1 align="center">The Bean Counter</h1>
+<hr>
+<h3 align="center">figuring the price of espresso drinks so baristas can have time to chat.</h3>
+How many shots?<input type="text" id="shotn">size: <input type="text" id="sizen">What kind of drink?<input type="text" id="typen">
+</br>
+<table> <tr><td><input type="button" onclick="shot=1; shotn.value=shot;" value="1"></td><td><input type="button" onclick="ounce=8; sizen.value=ounce;" value="S"></td><td><input type="button" onclick="typ='ESPRESSO';typen.value=typ;" value="ESPRESSO"></td><td><input type="button" onclick="shotn.value='';sizen.value='';typen.value='';res.value='';shot=0;size=0;typ='';price=0;" value="clear"></td></tr>
+<tr><td><input type="button" onclick="shot=2;shotn.value=shot; " value="2"></td><td><input type="button" onclick="ounce=12;sizen.value=ounce;" value="M"></td><td><input type="button" onclick="typ='LATTE';typen.value=typ;" value="LATTE"></td><td></td></tr>
+<tr><td><input type="button" onclick="shot=3;shotn.value=shot;" value="3"></td><td><input type="button" onclick="ounce=16;sizen.value=ounce;" value="L"></td><td><input type="button" onclick="typ='CAPPUCCINO';typen.value=typ;" value="CAPPUCCINO"></td><td><input type="button" onclick="
+if(typ=='ESPRESSO')
+price=1.40;
+if(typ=='LATTE'||typ=='AMERICANO')
+{if(ounce==8)
+price=1.95;
+if(ounce==12)
+price=2.35;
+if(ounce==16)
+price=2.75;}
+if(typ=='AMERICANO')
+price=1.20+0.30*(ounce/8);
+price=price+(shot-1)*0.50;
+price=price+price*taxrate;
+res.value=price;
+" value="Total"></td></tr>
+<tr><td><input type="button" onclick="shot=4;shotn.value=shot;" value="4"></td><td></td><td><input type="button" onclick="typ='AMERICANO';typen.value=typ;" value="AMERICANO"></td><td><input type="text"  value="0.00" id="res"></td></tr></table>
+</body>
+</html>
